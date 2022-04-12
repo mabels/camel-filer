@@ -2,7 +2,7 @@ package com.adviser.camel.filer;
 
 import org.apache.camel.Component;
 import org.apache.camel.Producer;
-import org.apache.camel.impl.ProcessorEndpoint;
+import org.apache.camel.support.ProcessorEndpoint;
 
 public class FilerEndpoint extends ProcessorEndpoint {
 

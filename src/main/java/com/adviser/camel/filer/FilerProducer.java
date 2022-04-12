@@ -10,7 +10,7 @@ import java.util.Map;
 
 import org.apache.camel.AsyncCallback;
 import org.apache.camel.Exchange;
-import org.apache.camel.impl.DefaultAsyncProducer;
+import org.apache.camel.support.DefaultAsyncProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,7 +34,13 @@ public class FilerProducer extends DefaultAsyncProducer {
 		filerEndpoint = endpoint;
 	}
 
-	public boolean process(Exchange exchange, AsyncCallback callback) {
+    @Override
+    public void close() {
+
+    }
+
+
+    public boolean process(Exchange exchange, AsyncCallback callback) {
 		try { 
 			handleRow(exchange);
 		} catch (Exception e) {
